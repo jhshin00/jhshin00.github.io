@@ -3,3 +3,7 @@
 .jekyll-cache
 _site/*
 _snap_md5.txt
+
+command.md
+Gemfile.lock
+Gemfile
