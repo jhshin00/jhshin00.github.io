@@ -1,1 +1,12 @@
-honors: []
+honors:
+- title: "Summa Cum Laude"
+  organization: "College of Engineering, SNU"
+  time: "Feb. 2025"
+
+- title: "Bronze Medal"
+  organization: "Mechatronics Project Contest, Hyundai Infracore"
+  time: "Jun. 2023"
+
+- title: "Academic Excellence Scholarship"
+  organization: "Department of Mechanical Engineering"
+  time: "2020F, 2023S - 2024F"

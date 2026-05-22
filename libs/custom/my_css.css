@@ -65,6 +65,34 @@ a:hover {
 .image {
   text-align: center; }
 
+/*  ================ News styling  ================ */
+.news-container {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+.news-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.news-container li {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.news-container li:last-child {
+  margin-bottom: 0;
+}
+.news-date {
+  min-width: 90px;
+  color: #555;
+}
+.news-content {
+  flex: 1;
+}
+
 /*  ================ Project styling  ================ */
 .project-container {
   margin-bottom: 30px;
@@ -161,8 +189,7 @@ a:hover {
     content: " ";
     height: 0;
     width: 0;
-    position: absolute;
-    pointer-events: none; }
+    position: absolute; pointer-events: none; }
   .popover-item:first-child .popover-link:after {
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: #fff;

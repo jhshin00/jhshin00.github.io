@@ -5,14 +5,14 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>{{ site.data.main_info.name }} | {{ page.title }}</title>
-  <meta name="description" content="Martin Saveski">
-  <meta name="author" content="Martin Saveski">
-  <meta property="og:title" content="Martin Saveski" />
+  <title>{{ site.data.main_info.name }}</title>
+  <meta name="description" content="Homepage of Jonghun Shin">
+  <meta name="author" content="Jonghun Shin">
+  <meta property="og:title" content="Jonghun Shin" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.martinsaveski.com" />
-  <meta property="og:site_name" content="Martin Saveski" />
-  <link rel="canonical" href="http://www.martinsaveski.com" />
+  <meta property="og:url" content="https://jhshin00.github.io" />
+  <meta property="og:site_name" content="Jonghun Shin" />
+  <link rel="canonical" href="https://jhshin00.github.io" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -119,6 +119,7 @@
       <div class="container">
         <ul class="navbar-list">
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#about" | prepend: site.baseurl }}>About Me</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#news" | prepend: site.baseurl }}>News</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Publications</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#education" | prepend: site.baseurl }}>Education</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl }}>Experience</a></li>
@@ -131,13 +132,13 @@
 
     <div class="footer">
       <div class="row">
-        <div class="four columns social-icons">
+        <div class="three columns social-icons">
           {{ site.data.main_info.name }}
         </div>
-        <div class="four columns">
-          {{ site.data.main_info.email }}
+        <div class="six columns">
+          based on <a href="https://faculty.washington.edu/msaveski/" target="_blank">Martin Saveski</a>'s template
         </div>
-        <div class="four columns">
+        <div class="three columns">
           {% if site.data.main_info.twitter %}
           <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
             <i class="fa fa-twitter-square" aria-hidden="true"></i>

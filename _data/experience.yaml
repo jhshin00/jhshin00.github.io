@@ -1,6 +1,11 @@
 experiences:
 
-- place: "Lab or Company"
-  time: "2024 - Present"
-  title: "Research Intern"
-  subtitle: "Short description"
+# - place: "Lab or Company"
+#   time: "2024 - Present"
+#   title: "Research Intern"
+#   subtitle: "Short description"
+
+# - place: "Republic of Korea Army"
+#   time: "Apr. 2021 - Oct. 2022"
+#   title: "Mandatory Military Service"
+#   subtitle: ""
