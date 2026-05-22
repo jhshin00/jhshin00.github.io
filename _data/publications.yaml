@@ -3,7 +3,7 @@ papers:
   - title: "[P2] DynaFLIP: Rethinking Robotics Perception via Tri-Modal-Dynamics Guided Representation"
     authors: "Jusuk Lee, Seungjae Lee, <b>Jonghun Shin</b>, Hoseong Jung, Sungha Kim, Daesol Cho, H. Jin Kim<sup>‡</sup>, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
     venue: "under review"
-    venue_note: "Spotlight Presentation (313/12107 = 2.6%)"
+    venue_note: ""
     paper_pdf: ""
     website: ""
     code: ""
