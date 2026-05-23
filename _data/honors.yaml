@@ -2,9 +2,10 @@ honors:
 - title: "Summa Cum Laude"
   organization: "College of Engineering, SNU"
   time: "Feb. 2025"
+  # subtitle: "GPA: 4.08/4.30"
 
-- title: "Bronze Medal"
-  organization: "Mechatronics Project Contest, Hyundai Infracore"
+- title: "Bronze Medal, Mechatronics Project Contest"
+  organization: "Hyundai Infracore"
   time: "Jun. 2023"
 
 - title: "Academic Excellence Scholarship"

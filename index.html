@@ -236,9 +236,12 @@ title: Home
   {% for honor in site.data.honors.honors %}
   <div class="paper">
     <p class="title">
-      <b>{{ honor.title }}</b>{% if honor.organization %}, {{ honor.organization }}{% endif %}
+      <!-- <b>{{ honor.title }}</b>{% if honor.organization %}, {{ honor.organization }}{% endif %} -->
+      <b>{{ honor.title }}</b>
       {% if honor.time %}<b style="float: right">{{ honor.time }}</b>{% endif %}
     </p>
+    {% if honor.organization %}<p>{{ honor.organization }}</p>{% endif %}
+    {% if honor.subtitle %}<p>{{ honor.subtitle }}</p>{% endif %}
   </div>
   {% endfor %}
   {% else %}
