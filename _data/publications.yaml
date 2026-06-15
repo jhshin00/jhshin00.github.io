@@ -1,11 +1,20 @@
 papers:
 
+  - title: "[P3] μ0 : A Scalable 3D Interaction-Trace World Model"
+    authors: "Seungjae Lee, Yoonkyo Jung, Jusuk Lee, <b>Jonghun Shin</b>, Amir Hossein Shahidzadeh, Yao-Chih Lee, H. Jin Kim, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
+    venue: "under review"
+    venue_note: ""
+    paper_pdf: "https://arxiv.org/abs/2606.13769"
+    website: "https://mu0-wm.github.io/"
+    code: ""
+    selected: n
+
   - title: "[P2] DynaFLIP: Rethinking Robotics Perception via Tri-Modal-Dynamics Guided Representation"
     authors: "Jusuk Lee, Seungjae Lee, <b>Jonghun Shin</b>, Hoseong Jung, Sungha Kim, Daesol Cho, H. Jin Kim<sup>‡</sup>, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
     venue: "under review"
     venue_note: ""
-    paper_pdf: ""
-    website: ""
+    paper_pdf: "https://arxiv.org/abs/2605.30350"
+    website: "https://dynaflip-robotics.github.io/"
     code: ""
     selected: n
 
