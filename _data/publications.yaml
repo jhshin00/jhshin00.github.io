@@ -6,7 +6,7 @@ papers:
     venue_note: ""
     paper_pdf: "https://arxiv.org/abs/2606.13769"
     website: "https://mu0-wm.github.io/"
-    code: ""
+    code: "https://github.com/Yoonkyo/mu0"
     selected: n
 
   - title: "[P2] DynaFLIP: Rethinking Robotics Perception via Tri-Modal-Dynamics Guided Representation"
@@ -15,7 +15,7 @@ papers:
     venue_note: ""
     paper_pdf: "https://arxiv.org/abs/2605.30350"
     website: "https://dynaflip-robotics.github.io/"
-    code: ""
+    code: "https://github.com/JU-SUK/DynaFLIP"
     selected: n
 
   - title: "[P1] BooST: Bridging Semantics and Motions for Efficient Skill Transfer"
