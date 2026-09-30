@@ -1,5 +1,12 @@
 news:
-  # - date: "May. 2026"
-  #   content: "Our paper "
+  - date: "Sep. 2026"
+    content: 'Our paper <a href="https://mu0-wm.github.io/" target="_blank" rel="noopener noreferrer"><strong>μ<sub>0</sub></strong></a> was accepted to <strong>CoRL 2026</strong>.'
+
+  - date: "Sep. 2026"
+    content: 'Our paper <a href="https://dynaflip-robotics.github.io/" target="_blank" rel="noopener noreferrer"><strong>DynaFLIP</strong></a> was accepted to <strong>NeurIPS 2026</strong>.'
+
+  - date: "Jul. 2026"
+    content: 'Our paper <a href="https://boost-robots.github.io/" target="_blank" rel="noopener noreferrer"><strong>BooST</strong></a> was accepted to <strong>IEEE RA-L</strong>.'
+
   - date: "Mar. 2025"
     content: "I joined Lab for Autonomous Robotics Research (<a href=\"https://larr.snu.ac.kr/\" target=\"_blank\">LARR</a>)."

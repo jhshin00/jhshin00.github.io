@@ -1,252 +1,92 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
-<!-- ========== ABOUT ========== -->
-<div class="docs-section" id="about">
-  <h4>About Me</h4>
-  <p>
-  I am a graduate student at Seoul National University (<a href="https://www.snu.ac.kr/">SNU</a>), advised by Prof. <a href="https://aerospace.snu.ac.kr/about/faculty?mode=view&profidx=9">H.Jin Kim</a>.
-  My research centers on developing generalist robotic agents that can assist people in their daily lives.
-  Currently, I am focusing on integrating the knowledge from both foundation models and human demonstrations into robotic policies.
-  </p> 
-</div>
-
-<!-- ========== NEWS ========== -->
-<div class="docs-section" id="news">
-  <h4>News</h4>
-  <div class="news-container">
-    <ul>
-      {% for item in site.data.news.news %}
-      <li>
-        <span class="news-date">{{ item.date }}</span>
-        <span class="news-content">{{ item.content }}</span>
-      </li>
-      {% endfor %}
-    </ul>
+<section class="profile-section" id="about" aria-labelledby="profile-name">
+  <img class="profile-photo" src="{{ site.data.main_info.profile_pic | relative_url }}" alt="{{ site.data.main_info.name }}" width="190" height="244" fetchpriority="high">
+  <div class="profile-bio">
+    <h1 id="profile-name">{{ site.data.main_info.name }}</h1>
+    <p class="profile-role">{{ site.data.main_info.title }}</p>
+    <p>
+      I am a graduate student at <a href="https://www.snu.ac.kr/">Seoul National University (SNU)</a>, advised by Prof. <a href="https://aerospace.snu.ac.kr/about/faculty?mode=view&profidx=9">H.Jin Kim</a>.
+    </p>
+    <p>
+      My research centers on developing <strong>generalist robotic agents</strong> that can assist people in their daily lives.
+      Currently, I am focusing on integrating the knowledge from both <strong>foundation models</strong> and <strong>human demonstrations</strong> into robotic policies.
+    </p>
+    <div class="profile-links" aria-label="Contact and profiles">
+      {% if site.data.main_info.email and site.data.main_info.email != "" %}
+      {% assign email_address = site.data.main_info.email | replace: " [AT] ", "@" %}
+      <a href="mailto:{{ email_address }}" aria-label="Email {{ site.data.main_info.name }}" title="{{ site.data.main_info.email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</a>
+      {% endif %}
+      {% if site.data.main_info.google_scholar and site.data.main_info.google_scholar != "" %}
+      <a href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a>
+      {% endif %}
+      {% if site.data.main_info.github and site.data.main_info.github != "" %}
+      <a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i>GitHub</a>
+      {% endif %}
+      {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
+      {% assign cv_link = site.data.main_info.cv %}
+      {% unless cv_link contains "://" %}{% assign cv_link = cv_link | relative_url %}{% endunless %}
+      <a href="{{ cv_link }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-text-o" aria-hidden="true"></i>CV</a>
+      {% endif %}
+      {% if site.data.main_info.linkedin and site.data.main_info.linkedin != "" %}
+      <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+      {% endif %}
+      {% if site.data.main_info.twitter and site.data.main_info.twitter != "" %}
+      <a href="{{ site.data.main_info.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+      {% endif %}
+    </div>
   </div>
-</div>
+</section>
 
-<!-- ========== PUBLICATIONS ========== -->
-<div class="docs-section" id="publications">
-  <h4>Publications</h4>
-
-  <p>Publication Type &mdash; C: Conference | J: Journal | P: Preprint<br/>
-  <!-- (* equal contribution, <sup>‡</sup> co-corresponding authors) -->
-  </p>
-
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#papers-selected">Selected</div></li>
-    <li><div class="button" data-ref="#papers-all">All</div></li>
+{% if site.data.news.news.size > 0 %}
+<section class="home-section" id="news" aria-labelledby="news-heading">
+  <h2 class="section-heading" id="news-heading">News</h2>
+  <ul class="news-list">
+    {% for item in site.data.news.news %}
+    <li>
+      <span class="news-date">{{ item.date }}</span>
+      <span class="news-content">{{ item.content }}</span>
+    </li>
+    {% endfor %}
   </ul>
+</section>
+{% endif %}
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="papers-selected">
-      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in selected_papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i>{% if paper.venue_note %}<br/><b style="color: #d9534f;">{{ paper.venue_note }}</b>{% endif %}</p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
-
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-
-            {% if paper.website %}
-              <a class="button" href="{{ paper.website }}" target="_blank">Website</a>
-            {% endif %}
-
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
-    <div class="tab-pane" id="papers-all">
-      {% for paper in site.data.publications.papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i>{% if paper.venue_note %}<br/><b style="color: #d9534f;">{{ paper.venue_note }}</b>{% endif %}</p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
-
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-
-            {% if paper.website %}
-              <a class="button" href="{{ paper.website }}" target="_blank">Website</a>
-            {% endif %}
-
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-<!-- ========== PROJECTS ========== 
-<div class="docs-section" id="projects">
-  <h4>Projects</h4>
-
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#projects-selected">Selected</div></li>
-    <li><div class="button" data-ref="#projects-all">All</div></li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="projects-selected">
-      {% assign selected_projects = site.data.projects.projects | where: "selected", "y" %}
-      {% for project in selected_projects %}
-        {% assign index_modulo = forloop.index0 | modulo:3 %}
-        {% if index_modulo == 0 %}
-          <div class="row">
-        {% endif %}
-
-          <div class="four columns">
-            <div class="project-container">
-
-                <div class="project-image-container">
-                  <a href="{{ project.url }}">
-                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
-                  </a>
-                </div>
-
-                <div class="project-caption">
-                  <b>{{ project.title }}</b> <br/>
-                  {{ project.subtitle }}
-                </div>
-
-            </div>
-          </div>
-
-        {% if index_modulo == 2 %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <div class="tab-pane" id="projects-all">
-      {% for project in site.data.projects.projects %}
-        {% assign index_modulo = forloop.index0 | modulo:3 %}
-        {% if index_modulo == 0 %}
-          <div class="row">
-        {% endif %}
-
-          <div class="four columns">
-            <div class="project-container">
-
-                <div class="project-image-container">
-                  <a href="{{ project.url }}">
-                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
-                  </a>
-                </div>
-
-                <div class="project-caption">
-                  <b>{{ project.title }}</b> <br/>
-                  {{ project.subtitle }}
-                </div>
-
-            </div>
-          </div>
-
-        {% if index_modulo == 2 %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-
-</div>
--->
-
-<!-- ========== EDUCATION ========== -->
-<div class="docs-section" id="education">
-  <h4>Education</h4>
-  {% for edu in site.data.education.education %}
-  <div class="paper">
-    <p class="title">
-      <b>{{ edu.place }}</b>
-      {% if edu.time %}<b style="float: right">{{ edu.time }}</b>{% endif %}
-    </p>
-    {% if edu.title %}<p>{{ edu.title }}</p>{% endif %}
-    {% if edu.subtitle %}<p>{{ edu.subtitle }}</p>{% endif %}
-  </div>
+<section class="home-section publications-section" id="publications" aria-labelledby="publications-heading">
+  <h2 class="section-heading" id="publications-heading">Publications</h2>
+  {% for paper in site.data.publications.papers %}
+    {% include publication.html paper=paper %}
   {% endfor %}
-</div>
+</section>
 
-<!-- ========== EXPERIENCE ========== -->
-<!-- <div class="docs-section" id="experience">
-  <h4>Experience</h4>
-  {% for exp in site.data.experience.experiences %}
-  <div class="paper">
-    <p class="title">
-      <b>{{ exp.title }}</b>
-      {% if exp.time %}<b style="float: right">{{ exp.time }}</b>{% endif %}
-    </p>
-    {% if exp.place %}<p>{{ exp.place }}</p>{% endif %}
-    {% if exp.subtitle %}<p>{{ exp.subtitle }}</p>{% endif %}
-  </div>
-  {% endfor %}
-</div> -->
+<div class="background-grid">
+  <section class="home-section" id="education" aria-labelledby="education-heading">
+    <h2 class="section-heading" id="education-heading">Education</h2>
+    {% for edu in site.data.education.education %}
+    <div class="record">
+      <div class="record-heading">
+        <h3 class="record-title">{{ edu.place }}</h3>
+        {% if edu.time %}<span class="record-date">{{ edu.time }}</span>{% endif %}
+      </div>
+      {% if edu.title %}<p class="record-detail">{{ edu.title }}</p>{% endif %}
+      {% if edu.subtitle and edu.subtitle != "" %}<p class="record-detail">{{ edu.subtitle }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
 
-<!-- ========== HONORS & AWARDS ========== -->
-<div class="docs-section" id="honors">
-  <h4>Honors & Awards</h4>
-  {% if site.data.honors.honors and site.data.honors.honors.size > 0 %}
-  {% for honor in site.data.honors.honors %}
-  <div class="paper">
-    <p class="title">
-      <!-- <b>{{ honor.title }}</b>{% if honor.organization %}, {{ honor.organization }}{% endif %} -->
-      <b>{{ honor.title }}</b>
-      {% if honor.time %}<b style="float: right">{{ honor.time }}</b>{% endif %}
-    </p>
-    {% if honor.organization %}<p>{{ honor.organization }}</p>{% endif %}
-    {% if honor.subtitle %}<p>{{ honor.subtitle }}</p>{% endif %}
-  </div>
-  {% endfor %}
-  {% else %}
-  <div class="paper">
-    <p>No honors or awards listed.</p>
-  </div>
-  {% endif %}
+  <section class="home-section" id="honors" aria-labelledby="honors-heading">
+    <h2 class="section-heading" id="honors-heading">Honors &amp; Awards</h2>
+    {% for honor in site.data.honors.honors %}
+    <div class="record">
+      <div class="record-heading">
+        <h3 class="record-title">{{ honor.title }}</h3>
+        {% if honor.time %}<span class="record-date">{{ honor.time }}</span>{% endif %}
+      </div>
+      {% if honor.organization %}<p class="record-detail">{{ honor.organization }}</p>{% endif %}
+      {% if honor.subtitle and honor.subtitle != "" %}<p class="record-detail">{{ honor.subtitle }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
 </div>

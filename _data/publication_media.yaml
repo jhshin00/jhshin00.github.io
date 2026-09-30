@@ -1,0 +1,7 @@
+- website: "https://mu0-wm.github.io/"
+  thumbnail: "/assets/publication-previews/mu0.png"
+  alt: "Comparison of VLA, video world model, and μ0 architectures"
+
+- website: "https://dynaflip-robotics.github.io/"
+  thumbnail: "/assets/publication-previews/dynaflip.png"
+  alt: "DynaFLIP downstream performance across robotic manipulation tasks"

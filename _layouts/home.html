@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.data.main_info.name }}</title>
+  <meta name="description" content="{{ site.data.main_info.name }} — {{ site.data.main_info.title }}. Research on generalist robotic agents, foundation models, and learning from human demonstrations.">
+  <meta name="author" content="{{ site.data.main_info.name }}">
+  <meta property="og:title" content="{{ site.data.main_info.name }}">
+  <meta property="og:description" content="{{ site.data.main_info.title }}. Research on generalist robotic agents and robot learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jhshin00.github.io/">
+  <link rel="canonical" href="https://jhshin00.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton/normalize.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/libs/external/font-awesome-4.7.0/css/font-awesome.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/libs/custom/home.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner page-shell">
+      <a class="nav-name" href="{{ '/' | relative_url }}">{{ site.data.main_info.name }}</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        {% if site.data.news.news.size > 0 %}<a href="#news">News</a>{% endif %}
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#honors">Honors</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-shell" id="main">
+    {{ content }}
+  </main>
+
+  {% if site.data.main_info.google_analystics_tracking_id and site.data.main_info.google_analystics_tracking_id != "" %}
+    {% include google_analytics.html %}
+  {% endif %}
+</body>
+</html>
