@@ -1,17 +1,17 @@
 papers:
 
   - title: "[P3] μ0 : A Scalable 3D Interaction-Trace World Model"
+    year: 2026
     authors: "Seungjae Lee, Yoonkyo Jung, Jusuk Lee, <b>Jonghun Shin</b>, Amir Hossein Shahidzadeh, Yao-Chih Lee, H. Jin Kim, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
     venue: "CoRL 2026"
-    workshop_venue: "IROS 2026 Workshop · RoBoWoMo"
-    venue_note: "Best Paper Award (2nd Place)"
+    workshop_venue: "IROS 2026 Workshop · RoBoWoMo (Best Paper Award)"
     paper_pdf: "https://arxiv.org/abs/2606.13769"
     website: "https://mu0-wm.github.io/"
     code: "https://github.com/Yoonkyo/mu0"
     huggingface: "https://huggingface.co/collections/furonghuang-lab/mu0"
-    selected: n
 
   - title: "[P2] DynaFLIP: Rethinking Robotics Perception via Tri-Modal-Dynamics Guided Representation"
+    year: 2026
     authors: "Jusuk Lee, Seungjae Lee, <b>Jonghun Shin</b>, Hoseong Jung, Sungha Kim, Daesol Cho, H. Jin Kim<sup>‡</sup>, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
     venue: "NeurIPS 2026"
     venue_note: ""
@@ -19,31 +19,40 @@ papers:
     website: "https://dynaflip-robotics.github.io/"
     code: "https://github.com/JU-SUK/DynaFLIP"
     huggingface: "https://huggingface.co/jlee-larr/dynaflip-base"
-    selected: n
 
   - title: "[P1] BooST: Bridging Semantics and Motions for Efficient Skill Transfer"
+    year: 2026
     authors: "Jusuk Lee, Daesol Cho, <b>Jonghun Shin</b>, Seungyeon Yoo, Jonghae Park, Taekbeom Lee, H. Jin Kim"
     venue: "RA-L 2026"
     paper_pdf: "https://arxiv.org/abs/2608.10600"
     website: "https://boost-robots.github.io/"
     code: ""
-    selected: n
 
   # - title: "[W1] Unifying What and How: Distilling a Pre-trained Unified Skill Representation for Efficient Adaptation"
   #   authors: "Jusuk Lee, Daesol Cho, <b>Jonghun Shin</b>, Jonghae Park, Taekbeom Lee, H. Jin Kim"
   #   venue: "Workshop on Generalizable Priors for Robot Manipulation, CoRL 2025."
   #   paper_pdf: ""
   #   website: "https://corl25-genpriors.github.io/"
-  #   selected: n
 
   - title: "[C1] Three-Dimensional Label-Free Characterization of Frog Erythrocytes using Optical Diffraction Tomography"
+    year: 2018
     authors: "Geon Kim, Moosung Lee, Daeheon Kwon, SeongYeon Youn, EuiTai Lee, <b>Jonghun Shin</b>, SangYun Lee, Youn Sil Lee, YongKeun Park"
     venue: "IEEE Photonics Conference (IPC), 2018"
     paper_pdf: "https://doi.org/10.1109/IPCon.2018.8527307"
-    selected: n
+    # Figure 1(a,b), extracted unchanged from the author's IPC PDF.
+    # Source: https://doi.org/10.1109/IPCon.2018.8527307
+    thumbnail: "/assets/publication-previews/erythrocytes-ipc-2018-fig1.jpg"
+    thumbnail_alt: "Refractive index and fluorescence images of a frog erythrocyte"
+    thumbnail_viewbox: "0 0 659 390"
+    thumbnail_width: 659
+    thumbnail_height: 939
 
   - title: "[J1] Measurements of three-dimensional refractive index tomography and membrane deformability of live erythrocytes from Pelophylax nigromaculatus"
+    year: 2018
     authors: "Geon Kim, Moosung Lee, SeongYeon Youn, EuiTae Lee, Daeheon Kwon, <b>Jonghun Shin</b>, SangYun Lee, Youn Sil Lee, YongKeun Park"
     venue: "Scientific Reports 8, 9192 (2018)"
     paper_pdf: "https://www.nature.com/articles/s41598-018-25886-8"
-    selected: n
+    # Full Figure 2 from the journal article.
+    # Source: https://www.nature.com/articles/s41598-018-25886-8#Fig2
+    thumbnail: "/assets/publication-previews/erythrocytes-2018-fig2.jpg"
+    thumbnail_alt: "Structural analyses of a frog erythrocyte using three-dimensional refractive index maps"

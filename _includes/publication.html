@@ -2,32 +2,51 @@
 {% assign media = site.data.publication_media | where: "website", paper.website | first %}
 {% assign thumbnail = paper.thumbnail | default: media.thumbnail %}
 {% assign thumbnail_alt = paper.thumbnail_alt | default: media.alt | default: paper.title %}
+{% assign preview_video = media.video %}
 {% assign display_title = paper.title | split: "] " | last %}
 <article class="publication{% if thumbnail %} publication-with-media{% endif %}">
   {% if thumbnail %}
-  <figure class="publication-media">
+  <figure class="publication-media{% if preview_video %} publication-media-video{% endif %}">
+    {% if preview_video %}
+    <video class="publication-video" muted loop playsinline controls preload="metadata" poster="{{ thumbnail | relative_url }}" width="190" height="112" aria-label="{{ thumbnail_alt | escape }}" data-preview-name="{{ media.label | default: display_title | escape }}" data-playback-rate="{{ media.playback_rate | default: 1 }}">
+      <source src="{{ preview_video | relative_url }}" type="video/mp4">
+      <img src="{{ thumbnail | relative_url }}" alt="{{ thumbnail_alt | escape }}" loading="lazy" width="190" height="112">
+    </video>
+    <button class="video-toggle" type="button" aria-label="Play {{ media.label | escape }} preview" hidden><i class="fa fa-play" aria-hidden="true"></i></button>
+    {% elsif paper.thumbnail_viewbox %}
+    <svg class="publication-thumbnail" viewBox="{{ paper.thumbnail_viewbox | escape }}" width="190" height="112" role="img" aria-label="{{ thumbnail_alt | escape }}">
+      <image href="{{ thumbnail | relative_url }}" width="{{ paper.thumbnail_width }}" height="{{ paper.thumbnail_height }}" />
+    </svg>
+    {% else %}
     <img src="{{ thumbnail | relative_url }}" alt="{{ thumbnail_alt | escape }}" loading="lazy" width="190" height="112">
+    {% endif %}
   </figure>
   {% endif %}
   <div class="publication-content">
-    <h3 class="publication-title">{{ display_title | escape }}</h3>
+    <h4 class="publication-title">{{ display_title | escape }}</h4>
     <p class="publication-authors">{{ paper.authors }}</p>
     <div class="publication-venues">
       {% if paper.venue and paper.venue != "" %}<span class="publication-venue">{{ paper.venue }}</span>{% endif %}
       {% if paper.workshop_venue and paper.workshop_venue != "" %}<span class="publication-venue">{{ paper.workshop_venue }}</span>{% endif %}
     </div>
     {% if paper.venue_note and paper.venue_note != "" %}<p class="publication-note">{{ paper.venue_note }}</p>{% endif %}
-    {% assign link_fields = "paper_pdf|website|code|huggingface|video|slides|poster|data" | split: "|" %}
-    {% assign link_labels = "Paper|Project|Code|Hugging Face|Video|Slides|Poster|Data" | split: "|" %}
-    {% assign link_icons = "file-text-o|external-link|github|cubes|play-circle-o|file-o|file-image-o|database" | split: "|" %}
+    {% assign link_fields = "paper_pdf|website|code|video|slides|poster|data" | split: "|" %}
+    {% assign link_labels = "Paper|Project|Code|Video|Slides|Poster|Data" | split: "|" %}
+    {% assign link_icons = "file-text-o||github|play-circle-o|file-o|file-image-o|database" | split: "|" %}
     <div class="publication-links">
       {% for field in link_fields %}
         {% assign link = paper[field] %}
         {% if link and link != "" %}
           {% unless link contains "://" %}{% assign link = link | relative_url %}{% endunless %}
-          <a href="{{ link | escape }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-{{ link_icons[forloop.index0] }}" aria-hidden="true"></i>{{ link_labels[forloop.index0] }}</a>
+          <a href="{{ link | escape }}" target="_blank" rel="noopener noreferrer">{% if field == "website" %}{% include icons/globe.svg %}{% else %}<i class="fa fa-{{ link_icons[forloop.index0] }}" aria-hidden="true"></i>{% endif %}{{ link_labels[forloop.index0] }}</a>
         {% endif %}
       {% endfor %}
+      {% comment %}
+      Hugging Face is temporarily hidden. Remove this comment block to restore it.
+      {% if paper.huggingface and paper.huggingface != "" %}
+        <a href="{{ paper.huggingface | escape }}" target="_blank" rel="noopener noreferrer">{% include icons/huggingface.svg %}Hugging Face</a>
+      {% endif %}
+      {% endcomment %}
     </div>
   </div>
 </article>

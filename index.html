@@ -8,7 +8,7 @@ title: Home
     <h1 id="profile-name">{{ site.data.main_info.name }}</h1>
     <p class="profile-role">{{ site.data.main_info.title }}</p>
     <p>
-      I am a graduate student at <a href="https://www.snu.ac.kr/">Seoul National University (SNU)</a>, advised by Prof. <a href="https://aerospace.snu.ac.kr/about/faculty?mode=view&profidx=9">H.Jin Kim</a>.
+      I am a graduate student at <a href="https://www.snu.ac.kr/"><strong>Seoul National University (SNU)</strong></a>, advised by Prof. <a href="https://aerospace.snu.ac.kr/about/faculty?mode=view&profidx=9"><strong>H.Jin Kim</strong></a>.
     </p>
     <p>
       My research centers on developing <strong>generalist robotic agents</strong> that can assist people in their daily lives.
@@ -33,9 +33,6 @@ title: Home
       {% if site.data.main_info.linkedin and site.data.main_info.linkedin != "" %}
       <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
       {% endif %}
-      {% if site.data.main_info.twitter and site.data.main_info.twitter != "" %}
-      <a href="{{ site.data.main_info.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
-      {% endif %}
     </div>
   </div>
 </section>
@@ -56,8 +53,14 @@ title: Home
 
 <section class="home-section publications-section" id="publications" aria-labelledby="publications-heading">
   <h2 class="section-heading" id="publications-heading">Publications</h2>
-  {% for paper in site.data.publications.papers %}
-    {% include publication.html paper=paper %}
+  {% assign publication_years = site.data.publications.papers | group_by: "year" | sort: "name" | reverse %}
+  {% for year in publication_years %}
+  <section class="publication-year-group" aria-labelledby="publications-year-{{ year.name }}">
+    <h3 class="publication-year" id="publications-year-{{ year.name }}">{{ year.name }}</h3>
+    {% for paper in year.items %}
+      {% include publication.html paper=paper %}
+    {% endfor %}
+  </section>
   {% endfor %}
 </section>
 

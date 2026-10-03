@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+gem "jekyll"
+gem "webrick"
+gem "csv"
+gem "bigdecimal"
+gem "base64"

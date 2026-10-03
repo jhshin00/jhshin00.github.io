@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ '/libs/external/skeleton/normalize.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/libs/external/font-awesome-4.7.0/css/font-awesome.min.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/libs/custom/home.css' | relative_url }}">
+  <script src="{{ '/libs/custom/publication-videos.js' | relative_url }}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -37,8 +38,5 @@
     {{ content }}
   </main>
 
-  {% if site.data.main_info.google_analystics_tracking_id and site.data.main_info.google_analystics_tracking_id != "" %}
-    {% include google_analytics.html %}
-  {% endif %}
 </body>
 </html>

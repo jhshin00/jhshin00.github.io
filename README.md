@@ -1,3 +1,3 @@
-# jhshin.github.io
+# Jonghun Shin's Homepage
 
-Academic Homepage of Jonghun Shin
+Personal academic homepage at [jhshin00.github.io](https://jhshin00.github.io/).

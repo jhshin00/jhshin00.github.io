@@ -1,7 +1,20 @@
 - website: "https://mu0-wm.github.io/"
-  thumbnail: "/assets/publication-previews/mu0.png"
-  alt: "Comparison of VLA, video world model, and μ0 architectures"
+  # Project teaser: https://mu0-wm.github.io/teaser.mp4, 4–24 seconds.
+  video: "/assets/publication-previews/mu0.mp4"
+  thumbnail: "/assets/publication-previews/mu0-poster.jpg"
+  label: "μ0"
+  alt: "μ0 project teaser excerpt"
+  playback_rate: 1.5
 
 - website: "https://dynaflip-robotics.github.io/"
-  thumbnail: "/assets/publication-previews/dynaflip.png"
-  alt: "DynaFLIP downstream performance across robotic manipulation tasks"
+  # Project teaser: https://dynaflip-robotics.github.io/static/videos/project_page_overview_video.mp4, 0–14 seconds.
+  video: "/assets/publication-previews/dynaflip.mp4"
+  thumbnail: "/assets/publication-previews/dynaflip-poster.jpg"
+  label: "DynaFLIP"
+  alt: "DynaFLIP project teaser excerpt"
+  playback_rate: 1.5
+
+- website: "https://boost-robots.github.io/"
+  # Image from https://ju-suk.github.io/publications/boost/teaser.png.
+  thumbnail: "/assets/publication-previews/boost.png"
+  alt: "BooST unified skill pretraining and downstream adaptation framework"
