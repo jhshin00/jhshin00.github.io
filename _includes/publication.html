@@ -1,5 +1,8 @@
 {% assign paper = include.paper %}
-{% assign media = site.data.publication_media | where: "website", paper.website | first %}
+{% assign media = nil %}
+{% if paper.website and paper.website != "" %}
+  {% assign media = site.data.publication_media | where: "website", paper.website | first %}
+{% endif %}
 {% assign thumbnail = paper.thumbnail | default: media.thumbnail %}
 {% assign thumbnail_alt = paper.thumbnail_alt | default: media.alt | default: paper.title %}
 {% assign preview_video = media.video %}
