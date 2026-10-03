@@ -17,7 +17,7 @@ title: Home
     <div class="profile-links" aria-label="Contact and profiles">
       {% if site.data.main_info.email and site.data.main_info.email != "" %}
       {% assign email_address = site.data.main_info.email | replace: " [AT] ", "@" %}
-      <a href="mailto:{{ email_address }}" aria-label="Email {{ site.data.main_info.name }}" title="{{ site.data.main_info.email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</a>
+      <button class="email-copy" type="button" data-copy-email="{{ email_address | escape }}" aria-label="Copy email address"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</button>
       {% endif %}
       {% if site.data.main_info.google_scholar and site.data.main_info.google_scholar != "" %}
       <a href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a>

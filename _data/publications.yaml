@@ -4,7 +4,7 @@ papers:
     year: 2026
     authors: "Seungjae Lee, Yoonkyo Jung, Jusuk Lee, <b>Jonghun Shin</b>, Amir Hossein Shahidzadeh, Yao-Chih Lee, H. Jin Kim, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
     venue: "CoRL 2026"
-    workshop_venue: "IROS 2026 Workshop · RoBoWoMo (Best Paper Award)"
+    workshop_venue: "IROS 2026 Workshop · RoBoWoMo (Best Paper Award - 2nd Place)"
     paper_pdf: "https://arxiv.org/abs/2606.13769"
     website: "https://mu0-wm.github.io/"
     code: "https://github.com/Yoonkyo/mu0"
