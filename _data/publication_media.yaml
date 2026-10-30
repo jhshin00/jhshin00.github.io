@@ -1,3 +1,12 @@
+- website: "https://jonghaepark.github.io/c-slerp/"
+  # First project video (5-tower gripper): https://jonghaepark.github.io/c-slerp/videos/5_tower_gripper.mp4.
+  # Official poster: https://jonghaepark.github.io/c-slerp/posters/5_tower_gripper.jpg.
+  video: "/assets/publication-previews/c-slerp.mp4"
+  thumbnail: "/assets/publication-previews/c-slerp-poster.jpg"
+  label: "C-Slerp"
+  alt: "C-Slerp stacking five cubes with a gripper alongside hyperspherical waypoint planning"
+  playback_rate: 1.5
+
 - website: "https://mu0-wm.github.io/"
   # Project teaser: https://mu0-wm.github.io/teaser.mp4, 4–24 seconds.
   video: "/assets/publication-previews/mu0.mp4"

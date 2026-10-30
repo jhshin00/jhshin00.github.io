@@ -1,5 +1,12 @@
 papers:
 
+  - title: "[P4] Hyperspherical Contrastive Representations Unlock Planning and Exploration"
+    year: 2026
+    authors: "Jonghae Park<sup>*</sup>, Sungil Son<sup>*</sup>, <b>Jonghun Shin</b>, Junseo Lee, H. Jin Kim, Benjamin Eysenbach"
+    venue: "Preprint"
+    paper_pdf: "https://arxiv.org/abs/2610.20409"
+    website: "https://jonghaepark.github.io/c-slerp/"
+
   - title: "[P3] μ0 : A Scalable 3D Interaction-Trace World Model"
     year: 2026
     authors: "Seungjae Lee, Yoonkyo Jung, Jusuk Lee, <b>Jonghun Shin</b>, Amir Hossein Shahidzadeh, Yao-Chih Lee, H. Jin Kim, Jia-Bin Huang<sup>‡</sup>, Furong Huang<sup>‡</sup>"
